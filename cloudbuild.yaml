@@ -5,3 +5,19 @@ images:
 - 'gcr.io/$PROJECT_ID/gcpdevops'
 options:
   logging: CLOUD_LOGGING_ONLY
+
+# YAML file converted to hash + array 
+# cloudbuild: {
+#     "steps": [
+#         {
+#             "name": "docker",
+#             "args": ["build", "-t", "gcr.io/$PROJECT_ID/gcpdevops", "."]
+#         }
+#     ],
+#     "images": [
+#         "gcr.io/$PROJECT_ID/gcpdevops"
+#     ],
+#     "options": {
+#         "logging": "CLOUD_LOGGING_ONLY"
+#     }
+# }

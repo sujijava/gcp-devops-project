@@ -1,0 +1,26 @@
+# deploy cluster to GKE
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcp-devops-gke
+spec:
+  replicas: 1 # set the number of replicas
+  selector:
+    matchLabels: # identifier of replicating container
+      app: gcp
+  template:
+    metadata:
+      labels:
+        app: gcp # here, it matches with line 10
+    spec:
+      containers:
+        - name: gcp-devops-gke
+          image: "gcr.io/$PROJECT_ID/gcpdevops"
+          ports:
+           - containerPort: 5000
+             # The program has opened a network port 5000 
+             # -> probably done at the application code level
+             # SO the app is listening port 5000
+          env:
+           - name: PORT
+             value: "5000"

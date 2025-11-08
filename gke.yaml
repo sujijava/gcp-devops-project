@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: gcp-devops-gke
-          image: "gcr.io/$PROJECT_ID/gcpdevops"
+          image: gcr.io/arcane-antler-477104-q1/gcpdevops
           ports:
            - containerPort: 5000
              # The program has opened a network port 5000 
